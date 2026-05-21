@@ -1215,6 +1215,81 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 .ch-item p { font-size: .88rem; color: #8fa0b8; line-height: 1.55; }
 
 /* ══════════════════════════════════════
+   BRAND IDENTITY
+══════════════════════════════════════ */
+.brand-id-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.8rem;
+}
+.bid-card {
+  background: rgba(255,255,255,.04);
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 2rem 1.8rem;
+  transition: border-color .3s;
+}
+.bid-card:hover { border-color: rgba(0,200,255,.25); }
+.bid-tag {
+  font-size: .6rem;
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1.1rem;
+}
+.bid-name {
+  font-size: 2.6rem;
+  font-weight: 900;
+  letter-spacing: -.04em;
+  line-height: 1;
+  color: #fff;
+  margin-bottom: .35rem;
+}
+.bid-fullname {
+  font-size: .76rem;
+  color: var(--muted);
+  letter-spacing: .05em;
+  margin-bottom: 1.1rem;
+}
+.bid-phrase {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.55;
+  letter-spacing: -.01em;
+}
+.bid-desc {
+  font-size: .87rem;
+  color: rgba(255,255,255,.6);
+  line-height: 1.75;
+  margin-top: 1rem;
+}
+.bid-colors {
+  display: flex;
+  gap: .8rem;
+  margin: 1.1rem 0 .2rem;
+}
+.bid-swatch {
+  width: 60px;
+  height: 60px;
+  border-radius: 12px;
+  display: flex;
+  align-items: flex-end;
+  padding: .3rem .45rem;
+  font-size: .58rem;
+  font-weight: 700;
+  color: rgba(255,255,255,.65);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255,255,255,.12);
+}
+@media (max-width: 860px) {
+  .brand-id-grid { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════════════════
    SELECTION FLOW
 ══════════════════════════════════════ */
 .selection-flow {
