@@ -110,62 +110,20 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   }
 }
 
-/* ── Part hero title reveal ── */
-@keyframes partLabelIn {
-  0%   { opacity: 0; transform: translateX(-24px); letter-spacing: .38em; }
-  60%  { opacity: 1; transform: translateX(4px);   letter-spacing: .20em; }
-  100% { opacity: 1; transform: translateX(0);     letter-spacing: .22em; }
+/* ── Part hero title gradient shimmer ── */
+@keyframes gradShimmer {
+  0%   { background-position: 0% center; }
+  50%  { background-position: 100% center; }
+  100% { background-position: 0% center; }
 }
-@keyframes partLineIn {
-  from { transform: scaleX(0); transform-origin: left; }
-  to   { transform: scaleX(1); transform-origin: left; }
-}
-@keyframes partTitleIn {
-  0%   {
-    opacity: 0;
-    transform: translateY(36px);
-    filter: blur(8px);
-    letter-spacing: .08em;
-  }
-  70%  {
-    opacity: 1;
-    transform: translateY(-3px);
-    filter: blur(0);
-    letter-spacing: -.04em;
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-    filter: blur(0);
-    letter-spacing: -.03em;
-  }
-}
-@keyframes partBarIn {
-  from { width: 0; opacity: 0; box-shadow: none; }
-  to   { width: 3rem; opacity: 1;
-         box-shadow: 0 0 12px rgba(0,200,255,.5), 0 0 28px rgba(156,130,232,.35); }
-}
-@keyframes partBarGlow {
-  0%, 100% { box-shadow: 0 0 8px  rgba(0,200,255,.4), 0 0 18px rgba(156,130,232,.25); }
-  50%       { box-shadow: 0 0 18px rgba(0,200,255,.7), 0 0 36px rgba(156,130,232,.45); }
+@keyframes barGlow {
+  0%, 100% { box-shadow: 0 0 8px rgba(0,200,255,.35), 0 0 18px rgba(156,130,232,.2); }
+  50%       { box-shadow: 0 0 16px rgba(0,200,255,.6), 0 0 32px rgba(156,130,232,.4); }
 }
 
 /* Override default reveal for part-hero-text */
 .part-hero-text.reveal { opacity: 0; transform: translateY(16px); }
 .part-hero-text.visible { opacity: 1; transform: none; }
-.part-hero-text.visible .part-label {
-  animation: partLabelIn .6s cubic-bezier(.23,1,.32,1) .1s both;
-}
-.part-hero-text.visible .part-label::before {
-  animation: partLineIn .4s cubic-bezier(.23,1,.32,1) .12s both;
-}
-.part-hero-text.visible h2 {
-  animation: partTitleIn .85s cubic-bezier(.16,1,.3,1) .28s both;
-}
-.part-hero-text.visible h2::after {
-  animation: partBarIn .55s cubic-bezier(.16,1,.3,1) .8s both,
-             partBarGlow 3s ease-in-out 1.4s infinite;
-}
 
 /* ══════════════════════════════════════
    TOP NAV
@@ -481,17 +439,24 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   font-weight: 900;
   letter-spacing: -.03em;
   line-height: 1.15;
-  color: #fff;
   text-transform: uppercase;
+  background: linear-gradient(90deg,
+    #fff 0%, #b8e4ff 20%, #fff 40%, #d4c0ff 60%, #fff 80%, #b8e4ff 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradShimmer 9s ease-in-out infinite;
 }
 .part-hero-text h2::after {
   content: '';
   display: block;
-  width: 0;          /* partBarIn 이 3rem 까지 확장 */
+  width: 3rem;
   height: 3px;
   margin-top: .8rem;
   background: var(--grad-ap);
   border-radius: 2px;
+  animation: barGlow 4s ease-in-out infinite;
 }
 
 /* Part body */
