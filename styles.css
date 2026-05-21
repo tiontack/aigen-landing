@@ -1968,8 +1968,8 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 
 /* ── Partnership strip ── */
 .partner-strip {
-  margin-top: 2.4rem;
-  padding-top: 1.6rem;
+  margin-top: 1.2rem;
+  padding-top: .8rem;
   border-top: 1px solid rgba(255,255,255,.06);
 }
 .partner-label {
@@ -1994,7 +1994,7 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 }
 /* 공통: CI 이미지 ghost 처리 */
 .partner-logo {
-  height: 36px;
+  height: 72px;
   width: auto;
   filter: grayscale(1) brightness(6);
   opacity: .2;
