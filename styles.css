@@ -112,29 +112,59 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 
 /* ── Part hero title reveal ── */
 @keyframes partLabelIn {
-  from { opacity: 0; transform: translateX(-18px); }
-  to   { opacity: 1; transform: translateX(0); }
+  0%   { opacity: 0; transform: translateX(-24px); letter-spacing: .38em; }
+  60%  { opacity: 1; transform: translateX(4px);   letter-spacing: .20em; }
+  100% { opacity: 1; transform: translateX(0);     letter-spacing: .22em; }
+}
+@keyframes partLineIn {
+  from { transform: scaleX(0); transform-origin: left; }
+  to   { transform: scaleX(1); transform-origin: left; }
 }
 @keyframes partTitleIn {
-  from {
+  0%   {
     opacity: 0;
-    transform: translateY(32px) skewY(2deg);
-    letter-spacing: .06em;
+    transform: translateY(36px);
+    filter: blur(8px);
+    letter-spacing: .08em;
   }
-  to   {
+  70%  {
     opacity: 1;
-    transform: translateY(0) skewY(0);
+    transform: translateY(-3px);
+    filter: blur(0);
+    letter-spacing: -.04em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
     letter-spacing: -.03em;
   }
 }
+@keyframes partBarIn {
+  from { width: 0; opacity: 0; box-shadow: none; }
+  to   { width: 3rem; opacity: 1;
+         box-shadow: 0 0 12px rgba(0,200,255,.5), 0 0 28px rgba(156,130,232,.35); }
+}
+@keyframes partBarGlow {
+  0%, 100% { box-shadow: 0 0 8px  rgba(0,200,255,.4), 0 0 18px rgba(156,130,232,.25); }
+  50%       { box-shadow: 0 0 18px rgba(0,200,255,.7), 0 0 36px rgba(156,130,232,.45); }
+}
+
 /* Override default reveal for part-hero-text */
 .part-hero-text.reveal { opacity: 0; transform: translateY(16px); }
 .part-hero-text.visible { opacity: 1; transform: none; }
 .part-hero-text.visible .part-label {
-  animation: partLabelIn .5s cubic-bezier(.23,1,.32,1) .15s both;
+  animation: partLabelIn .6s cubic-bezier(.23,1,.32,1) .1s both;
+}
+.part-hero-text.visible .part-label::before {
+  animation: partLineIn .4s cubic-bezier(.23,1,.32,1) .12s both;
 }
 .part-hero-text.visible h2 {
-  animation: partTitleIn .9s cubic-bezier(.16,1,.3,1) .25s both;
+  animation: partTitleIn .85s cubic-bezier(.16,1,.3,1) .28s both;
+}
+.part-hero-text.visible h2::after {
+  animation: partBarIn .55s cubic-bezier(.16,1,.3,1) .8s both,
+             partBarGlow 3s ease-in-out 1.4s infinite;
 }
 
 /* ══════════════════════════════════════
@@ -457,12 +487,11 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 .part-hero-text h2::after {
   content: '';
   display: block;
-  width: 3rem;
+  width: 0;          /* partBarIn 이 3rem 까지 확장 */
   height: 3px;
   margin-top: .8rem;
   background: var(--grad-ap);
   border-radius: 2px;
-  box-shadow: 0 0 12px rgba(0,200,255,.4), 0 0 24px rgba(156,130,232,.3);
 }
 
 /* Part body */
