@@ -46,20 +46,38 @@
   <canvas id="particles"></canvas>
   <div class="hero-bg" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80')"></div>
   <div class="hero-overlay"></div>
+  <!-- 스캔라인 오버레이 -->
+  <div class="hero-scan"></div>
+  <!-- 스피드 라인 -->
+  <div class="hero-speed">
+    <span class="hsl"></span>
+    <span class="hsl"></span>
+    <span class="hsl"></span>
+    <span class="hsl"></span>
+  </div>
   <div class="hero-content">
     <div class="hero-kws hero-kws--top">
       <span class="hkw hkw-cyan">🧠 슈퍼 인간화 시대</span>
       <span class="hkw hkw-purple">⚡ AI 오케스트레이션</span>
       <span class="hkw hkw-gold">🤝 공감 근육</span>
     </div>
-    <h1 class="hero-title"><span class="ht-ai">AI</span><span class="accent">-GEN</span></h1>
+    <div class="hero-title-wrap">
+      <h1 class="hero-title"><span class="ht-ai">AI</span><span class="accent">-GEN</span></h1>
+    </div>
     <div class="hero-kws hero-kws--bot">
       <span class="hkw hkw-purple">💪 실험×실행</span>
       <span class="hkw hkw-cyan">✨ 몰입과 시도</span>
       <span class="hkw hkw-green">🚀 20+ 프로젝트</span>
       <span class="hkw hkw-gold">💰 월 250만 지원금</span>
     </div>
-    <a href="#part1" class="hero-cta">백서 탐색 <span>↓</span></a>
+    <div class="hero-scroll" onclick="document.getElementById('part1').scrollIntoView({behavior:'smooth'})">
+      <span class="hero-scroll-label">자세히 알아보기</span>
+      <div class="hero-chevrons">
+        <span class="hc"></span>
+        <span class="hc"></span>
+        <span class="hc"></span>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -2084,15 +2084,96 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 /* ══════════════════════════════════════
    HERO — Ken Burns background + keyword chips
 ══════════════════════════════════════ */
+/* ── 빠른 kenBurns — 세상이 변한다는 긴박감 ── */
 @keyframes kenBurns {
-  0%   { transform: scale(1.0) translate(0,    0);      }
-  33%  { transform: scale(1.08) translate(-1%, -.5%);   }
-  66%  { transform: scale(1.05) translate( .8%, .4%);   }
-  100% { transform: scale(1.0) translate(0,    0);      }
+  0%   { transform: scale(1.06) translate( 0,     0);      }
+  18%  { transform: scale(1.24) translate(-2.8%, -1.8%);   }
+  42%  { transform: scale(1.13) translate( 2.2%,  1.5%);   }
+  67%  { transform: scale(1.28) translate(-1.5%,  2.2%);   }
+  85%  { transform: scale(1.10) translate( 1.8%, -1.0%);   }
+  100% { transform: scale(1.06) translate( 0,     0);      }
+}
+@keyframes screenFlash {
+  0%, 82%, 84%, 86%, 100% { filter: brightness(.35) saturate(.8); }
+  83%  { filter: brightness(.58) saturate(1.1) hue-rotate(8deg); }
+  85%  { filter: brightness(.42) saturate(.9); }
 }
 .hero-bg {
-  animation: kenBurns 28s ease-in-out infinite;
+  animation: kenBurns 13s ease-in-out infinite,
+             screenFlash 17s ease-in-out 6s infinite;
   transform-origin: center center;
+}
+
+/* ── 스캔라인 오버레이 ── */
+.hero-scan {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent 0px,
+    transparent 3px,
+    rgba(0,200,255,.014) 3px,
+    rgba(0,200,255,.014) 4px
+  );
+  animation: scanMove 5s linear infinite;
+}
+@keyframes scanMove {
+  from { background-position: 0 0; }
+  to   { background-position: 0 40px; }
+}
+
+/* ── 스피드 라인 ── */
+.hero-speed {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.hsl {
+  position: absolute;
+  height: 1px;
+  width: 35%;
+  background: linear-gradient(90deg, transparent 0%, rgba(0,200,255,.5) 40%, rgba(180,140,255,.4) 70%, transparent 100%);
+  opacity: 0;
+  animation: speedSweep 8s ease-in-out infinite;
+}
+.hsl:nth-child(1) { top: 18%; animation-delay: 0s;   width: 28%; }
+.hsl:nth-child(2) { top: 42%; animation-delay: 2.8s; width: 18%; }
+.hsl:nth-child(3) { top: 63%; animation-delay: 5.2s; width: 32%; }
+.hsl:nth-child(4) { top: 80%; animation-delay: 1.5s; width: 14%; }
+@keyframes speedSweep {
+  0%   { transform: translateX(-110%); opacity: 0; }
+  8%   { opacity: 1; }
+  60%  { opacity: .35; }
+  100% { transform: translateX(380%); opacity: 0; }
+}
+
+/* ── 타이틀 글리치 래퍼 ── */
+@keyframes glitchWrap {
+  0%, 85%, 88%, 91%, 100% {
+    transform: none; filter: none;
+  }
+  86% {
+    transform: skewX(-3.5deg) translateX(-7px);
+    filter: brightness(1.9) hue-rotate(50deg) saturate(2);
+  }
+  87% {
+    transform: skewX(2.5deg) translateX(6px);
+    filter: brightness(1.5) hue-rotate(-35deg);
+  }
+  89% {
+    transform: skewX(-1.5deg) translateX(-3px);
+    filter: brightness(1.7) hue-rotate(25deg);
+  }
+  90% {
+    transform: none; filter: brightness(1.2);
+  }
+}
+.hero-title-wrap {
+  animation: glitchWrap 9s ease-in-out 3.5s infinite;
 }
 
 /* ── Title glow pulse (after 3D anim completes) ── */
@@ -2149,6 +2230,54 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
              ctaGlow 3.2s ease-in-out 2.6s infinite;
 }
 
+/* ── 자세히 알아보기 스크롤 인디케이터 ── */
+.hero-scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  cursor: pointer;
+  opacity: 0;
+  animation: ctaIn .8s cubic-bezier(.23,1,.32,1) 2.2s both;
+  margin-top: .5rem;
+}
+.hero-scroll-label {
+  font-size: .64rem;
+  font-weight: 500;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.32);
+}
+.hero-chevrons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+}
+.hc {
+  display: block;
+  width: 11px;
+  height: 11px;
+  border-right: 1.5px solid rgba(255,255,255,.35);
+  border-bottom: 1.5px solid rgba(255,255,255,.35);
+  animation: chevronWave 2.2s ease-in-out infinite;
+}
+.hc:nth-child(1) { animation-delay: 0s; }
+.hc:nth-child(2) { animation-delay: .28s; }
+.hc:nth-child(3) { animation-delay: .56s; }
+@keyframes chevronWave {
+  0%, 100% {
+    transform: rotate(45deg) translateY(0);
+    opacity: .18;
+    border-color: rgba(255,255,255,.18);
+  }
+  50% {
+    transform: rotate(45deg) translateY(4px);
+    opacity: .7;
+    border-color: rgba(0,200,255,.7);
+  }
+}
+
 /* ── Hero keyword chips ── */
 @keyframes kwIn {
   from { opacity: 0; transform: translateY(18px) scale(.88); filter: blur(6px); }
@@ -2156,7 +2285,7 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 }
 @keyframes kwFloat {
   0%, 100% { transform: translateY(0px); }
-  50%       { transform: translateY(-7px); }
+  50%       { transform: translateY(-10px); }
 }
 .hero-kws {
   display: flex;
@@ -2179,9 +2308,8 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   white-space: nowrap;
   backdrop-filter: blur(10px);
   opacity: 0; /* hidden until kwIn fires */
-  /* kwIn enters, then kwFloat runs perpetually after */
   animation: kwIn .65s cubic-bezier(.23,1,.32,1) both,
-             kwFloat 4.5s ease-in-out infinite;
+             kwFloat 3s ease-in-out infinite;
 }
 /* Staggered entrance: kwIn delay, kwFloat delay */
 .hero-kws--top .hkw:nth-child(1) { animation-delay:  .65s, 1.31s; }
