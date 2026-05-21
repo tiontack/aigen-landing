@@ -890,14 +890,22 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   margin-top: 1.4rem;
 }
 @media (max-width: 860px) { .talent-row { grid-template-columns: 1fr; } }
+/* 인재상: 상단 CORE 박스 + 하단 4열 */
+.talent-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1.4rem;
+}
 .talent-big {
   background: linear-gradient(135deg, rgba(0,200,255,.08) 0%, rgba(123,94,167,.08) 100%);
   border: 1px solid rgba(0,200,255,.22);
   border-radius: var(--r);
-  padding: 2rem;
+  padding: 1.6rem 2rem;
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.4rem;
   position: relative;
 }
 .tb-icon { font-size: 2.4rem; }
@@ -918,7 +926,7 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 }
 .talent-grid4 {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
 .tg-item {
@@ -2203,6 +2211,7 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   .eval-grid { grid-template-columns: 1fr; }
   .talent-row { grid-template-columns: 1fr; }
   .talent-grid4 { grid-template-columns: 1fr 1fr; gap: .7rem; }
+  .talent-stack .talent-big { padding: 1.4rem; }
   .life-row { grid-template-columns: 1fr; }
   .space-grid { grid-template-columns: 1fr; }
   .impact-grid { grid-template-columns: 1fr; }
