@@ -612,6 +612,9 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+.accent-stat .stat-n em {
+  -webkit-text-fill-color: rgba(255,255,255,.9);
+}
 .stat-l {
   display: block;
   font-size: .72rem;
