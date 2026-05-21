@@ -1966,6 +1966,75 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   letter-spacing: .04em;
 }
 
+/* ── Partnership strip ── */
+.partner-strip {
+  margin-top: 2.4rem;
+  padding-top: 1.6rem;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+.partner-label {
+  font-size: .58rem;
+  font-weight: 700;
+  letter-spacing: .32em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.18);
+  margin-bottom: 1.2rem;
+}
+.partner-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+.partner-div {
+  width: 1px;
+  height: 30px;
+  background: rgba(255,255,255,.1);
+  flex-shrink: 0;
+}
+/* 공통: 로고 ghost 처리 */
+.partner-ci {
+  display: flex;
+  align-items: baseline;
+  gap: .25rem;
+  opacity: .2;
+  filter: grayscale(1) brightness(1.4);
+  transition: opacity .3s;
+}
+.partner-ci:hover { opacity: .35; }
+/* SK그룹 */
+.sk-badge {
+  font-size: 1.55rem;
+  font-weight: 900;
+  letter-spacing: -.03em;
+  color: #fff;
+  line-height: 1;
+}
+.sk-group {
+  font-size: .78rem;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: .03em;
+  align-self: center;
+}
+/* mySUNI */
+.suni-ci { align-items: flex-end; gap: 0; }
+.suni-my {
+  font-size: .78rem;
+  font-weight: 400;
+  color: #fff;
+  letter-spacing: .01em;
+  margin-bottom: .15rem;
+  align-self: flex-end;
+}
+.suni-text {
+  font-size: 1.45rem;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: .06em;
+  line-height: 1;
+}
+
 /* ══════════════════════════════════════
    HERO — Ken Burns background + keyword chips
 ══════════════════════════════════════ */
