@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 228 65" fill="none">
+  <!-- my triangles icon (teal) -->
+  <polygon points="0,2 0,21 15,11.5"   fill="#5CBCBA"/>
+  <polygon points="18,2 18,21 33,11.5" fill="#5CBCBA"/>
+  <polygon points="7,25 33,25 20,41"   fill="#5CBCBA"/>
+  <!-- "my" text below triangles -->
+  <text x="1" y="57" font-family="Arial, Helvetica, sans-serif" font-size="10.5" font-weight="400" fill="#5CBCBA" letter-spacing="0.8">my</text>
+
+  <!-- SuNi wordmark -->
+  <!-- Su -->
+  <text x="44" y="53" font-family="'Arial Black', 'Arial Bold', Gadget, sans-serif" font-size="44" font-weight="900" fill="#DA1030">Su</text>
+  <!-- N body -->
+  <text x="108" y="53" font-family="'Arial Black', 'Arial Bold', Gadget, sans-serif" font-size="44" font-weight="900" fill="#DA1030">N</text>
+  <!-- Arc from top-right of N to teal circle -->
+  <path d="M 138,11 C 143,4 150,2 157,2" stroke="#5CBCBA" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- Teal circle (shared dot for i) -->
+  <circle cx="162" cy="2" r="6" fill="#5CBCBA"/>
+
+  <!-- i — vertical bar only (no built-in dot) -->
+  <rect x="158" y="23" width="9" height="31" rx="4.5" fill="#DA1030"/>
+</svg>
