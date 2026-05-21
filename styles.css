@@ -40,6 +40,8 @@ body {
   line-height: 1.7;
   width: 100%;
   overflow-x: clip;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 a { color: inherit; text-decoration: none; }
 img { display: block; max-width: 100%; }
@@ -494,12 +496,12 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   border-radius: 14px 14px 14px 4px;
   padding: 1.3rem 1.7rem 1.3rem 3.6rem;
   margin: 1.4rem 0 2.4rem;
-  font-size: 1.08rem;
+  font-size: 1.02rem;
   color: #d8e8ff;
   font-style: normal;
-  font-family: 'Nanum Pen Script', 'Apple SD Gothic Neo', cursive;
-  line-height: 2.0;
-  letter-spacing: 0.02em;
+  font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Nanum Myeongjo', Georgia, serif;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
   box-shadow: 0 4px 24px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.04);
   backdrop-filter: blur(4px);
 }
@@ -2045,6 +2047,7 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   font-size: .8rem;
   font-weight: 600;
   letter-spacing: .05em;
+  white-space: nowrap;
   backdrop-filter: blur(10px);
   opacity: 0; /* hidden until kwIn fires */
   /* kwIn enters, then kwFloat runs perpetually after */
