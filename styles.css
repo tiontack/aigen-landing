@@ -2001,6 +2001,7 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   transition: opacity .3s;
 }
 .partner-logo:hover { opacity: .38; }
+.partner-logo--sk { height: 144px; }
 
 /* ══════════════════════════════════════
    HERO — Ken Burns background + keyword chips
