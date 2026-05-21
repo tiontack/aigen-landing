@@ -1992,48 +1992,15 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   background: rgba(255,255,255,.1);
   flex-shrink: 0;
 }
-/* 공통: 로고 ghost 처리 */
-.partner-ci {
-  display: flex;
-  align-items: baseline;
-  gap: .25rem;
+/* 공통: CI 이미지 ghost 처리 */
+.partner-logo {
+  height: 36px;
+  width: auto;
+  filter: grayscale(1) brightness(6);
   opacity: .2;
-  filter: grayscale(1) brightness(1.4);
   transition: opacity .3s;
 }
-.partner-ci:hover { opacity: .35; }
-/* SK그룹 */
-.sk-badge {
-  font-size: 1.55rem;
-  font-weight: 900;
-  letter-spacing: -.03em;
-  color: #fff;
-  line-height: 1;
-}
-.sk-group {
-  font-size: .78rem;
-  font-weight: 600;
-  color: #fff;
-  letter-spacing: .03em;
-  align-self: center;
-}
-/* mySUNI */
-.suni-ci { align-items: flex-end; gap: 0; }
-.suni-my {
-  font-size: .78rem;
-  font-weight: 400;
-  color: #fff;
-  letter-spacing: .01em;
-  margin-bottom: .15rem;
-  align-self: flex-end;
-}
-.suni-text {
-  font-size: 1.45rem;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: .06em;
-  line-height: 1;
-}
+.partner-logo:hover { opacity: .38; }
 
 /* ══════════════════════════════════════
    HERO — Ken Burns background + keyword chips
