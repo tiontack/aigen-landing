@@ -3,6 +3,17 @@
    Design system: dark cinematic + cyan/gold accents
 ────────────────────────────────────────────── */
 
+/* ── Custom font: 에이투지체 (A2Z) ── */
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-100.woff2') format('woff2'),url('fonts/A2Z-100.ttf') format('truetype'); font-weight:100; font-display:swap; }
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-200.woff2') format('woff2'),url('fonts/A2Z-200.ttf') format('truetype'); font-weight:200; font-display:swap; }
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-300.woff2') format('woff2'),url('fonts/A2Z-300.ttf') format('truetype'); font-weight:300; font-display:swap; }
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-400.woff2') format('woff2'),url('fonts/A2Z-400.ttf') format('truetype'); font-weight:400; font-display:swap; }
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-500.woff2') format('woff2'),url('fonts/A2Z-500.ttf') format('truetype'); font-weight:500; font-display:swap; }
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-600.woff2') format('woff2'),url('fonts/A2Z-600.ttf') format('truetype'); font-weight:600; font-display:swap; }
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-700.woff2') format('woff2'),url('fonts/A2Z-700.ttf') format('truetype'); font-weight:700; font-display:swap; }
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-800.woff2') format('woff2'),url('fonts/A2Z-800.ttf') format('truetype'); font-weight:800; font-display:swap; }
+@font-face { font-family:'A2Z'; src:url('fonts/A2Z-900.woff2') format('woff2'),url('fonts/A2Z-900.ttf') format('truetype'); font-weight:900; font-display:swap; }
+
 /* ── Variables ── */
 :root {
   --bg:        #05070f;
@@ -36,7 +47,7 @@ html { scroll-behavior:smooth; font-size:16px; }
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Pretendard', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
+  font-family: 'A2Z', 'Pretendard', -apple-system, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
   line-height: 1.7;
   width: 100%;
   overflow-x: clip;
@@ -499,7 +510,8 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
   font-size: 1.02rem;
   color: #d8e8ff;
   font-style: normal;
-  font-family: 'Noto Serif KR', 'Apple SD Gothic Neo', 'Nanum Myeongjo', Georgia, serif;
+  font-family: 'A2Z', -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  font-weight: 300;
   line-height: 1.9;
   letter-spacing: 0.01em;
   box-shadow: 0 4px 24px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.04);
