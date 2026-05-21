@@ -1994,14 +1994,14 @@ em { font-style: normal; font-weight: 400; font-size: 0.7em; opacity: 0.8; }
 }
 /* 공통: CI 이미지 ghost 처리 */
 .partner-logo {
-  height: 72px;
+  height: 58px;
   width: auto;
   filter: grayscale(1) brightness(6);
   opacity: .2;
   transition: opacity .3s;
 }
 .partner-logo:hover { opacity: .38; }
-.partner-logo--sk { height: 144px; }
+.partner-logo--sk { height: 86px; }
 
 /* ══════════════════════════════════════
    HERO — Ken Burns background + keyword chips
